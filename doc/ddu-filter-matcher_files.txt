@@ -1,0 +1,66 @@
+*ddu-filter-matcher_files.txt*		Ignore files matcher for ddu.vim
+
+Author: Shougo <Shougo.Matsu at gmail.com>
+License: MIT license
+
+CONTENTS				*ddu-filter-matcher_files*
+
+Introduction		|ddu-filter-matcher_files-introduction|
+Install			|ddu-filter-matcher_files-install|
+Examples		|ddu-filter-matcher_files-examples|
+Params			|ddu-filter-matcher_files-params|
+
+
+==============================================================================
+INTRODUCTION			*ddu-filter-matcher_files-introduction*
+
+This matcher filters specified files items.
+
+
+==============================================================================
+INSTALL				*ddu-filter-matcher_files-install*
+
+Please install both "ddu.vim" and "denops.vim".
+
+https://github.com/Shougo/ddu.vim
+https://github.com/vim-denops/denops.vim
+
+
+==============================================================================
+EXAMPLES			*ddu-filter-matcher_files-examples*
+>
+	call ddu#custom#patch_global(#{
+	    \   sourceOptions: #{
+	    \     _: #{
+	    \       matchers: ['matcher_files'],
+	    \     },
+	    \   }
+	    \ })
+	call ddu#custom#patch_global(#{
+	    \   filterParams: #{
+	    \     matcher_files #{
+	    \       globs: ['test_*.vim'],
+	    \       patterns: ['/test_[^/]*.vim$'],
+	    \     },
+	    \   }
+	    \ })
+<
+
+==============================================================================
+PARAMS				*ddu-filter-matcher_files-params*
+
+				*ddu-filter-matcher_files-param-globs*
+globs (string[])
+		The files glob list.
+
+		Default: []
+
+				*ddu-filter-matcher_files-param-patterns*
+patterns (string[])
+		The files pattern list.
+		Note: They must be TypeScript Regexp.
+
+		Default: []
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:noet:
