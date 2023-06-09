@@ -1,7 +1,10 @@
-import { BaseFilter, DduItem } from "https://deno.land/x/ddu_vim@v2.6.0/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v2.6.0/deps.ts";
-import { ActionData } from "https://deno.land/x/ddu_kind_file@v0.3.2/file.ts";
-import { globToRegExp } from "https://deno.land/std@0.181.0/path/glob.ts";
+import {
+  BaseFilter,
+  DduItem,
+} from "https://deno.land/x/ddu_vim@v3.0.2/types.ts";
+import { Denops } from "https://deno.land/x/ddu_vim@v3.0.2/deps.ts";
+import { ActionData } from "https://deno.land/x/ddu_kind_file@v0.5.0/file.ts";
+import { globToRegExp } from "https://deno.land/std@0.191.0/path/glob.ts";
 
 type Params = {
   globs: string[];
@@ -9,24 +12,26 @@ type Params = {
 };
 
 export class Filter extends BaseFilter<Params> {
-  // deno-lint-ignore require-await
-  override async filter(args: {
+  override filter(args: {
     denops: Denops;
     filterParams: Params;
     items: DduItem[];
   }): Promise<DduItem[]> {
-    if (args.filterParams.patterns.length == 0
-        && args.filterParams.globs.length == 0) {
+    if (
+      args.filterParams.patterns.length == 0 &&
+      args.filterParams.globs.length == 0
+    ) {
       return Promise.resolve(args.items);
     }
 
     const globs = args.filterParams.globs.map(
-      (glob) => globToRegExp('**/' + glob));
+      (glob) => globToRegExp("**/" + glob),
+    );
 
     return Promise.resolve(args.items.filter(
       (item) => {
         const action = item.action as ActionData;
-        if (!action.path) { return false; }
+        if (!action.path) return false;
         for (const pattern of args.filterParams.patterns) {
           if (action.path.search(pattern) >= 0) {
             return true;
@@ -38,7 +43,7 @@ export class Filter extends BaseFilter<Params> {
           }
         }
         return false;
-      }
+      },
     ));
   }
 
