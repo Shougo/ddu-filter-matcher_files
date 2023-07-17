@@ -1,10 +1,10 @@
 import {
   BaseFilter,
   DduItem,
-} from "https://deno.land/x/ddu_vim@v3.0.2/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v3.0.2/deps.ts";
-import { ActionData } from "https://deno.land/x/ddu_kind_file@v0.5.0/file.ts";
-import { globToRegExp } from "https://deno.land/std@0.191.0/path/glob.ts";
+} from "https://deno.land/x/ddu_vim@v3.4.2/types.ts";
+import { Denops } from "https://deno.land/x/ddu_vim@v3.4.2/deps.ts";
+import { ActionData } from "https://deno.land/x/ddu_kind_file@v0.5.3/file.ts";
+import { globToRegExp } from "https://deno.land/std@0.194.0/path/glob.ts";
 
 type Params = {
   globs: string[];
