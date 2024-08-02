@@ -1,7 +1,4 @@
-import {
-  BaseFilter,
-  DduItem,
-} from "jsr:@shougo/ddu-vim@^5.0.0/types";
+import { BaseFilter, DduItem } from "jsr:@shougo/ddu-vim@^5.0.0/types";
 
 import { type ActionData } from "jsr:@shougo/ddu-kind-file@^0.8.0";
 
