@@ -1,11 +1,11 @@
-import { type DduItem } from "jsr:@shougo/ddu-vim@~6.1.0/types";
-import { BaseFilter } from "jsr:@shougo/ddu-vim@~6.1.0/filter";
+import type { DduItem } from "@shougo/ddu-vim/types";
+import { BaseFilter } from "@shougo/ddu-vim/filter";
 
-import { type ActionData } from "jsr:@shougo/ddu-kind-file@~0.9.0";
+import type { ActionData } from "@shougo/ddu-kind-file";
 
-import type { Denops } from "jsr:@denops/core@~7.0.0";
+import type { Denops } from "jsr:@denops/std";
 
-import { globToRegExp } from "jsr:@std/path@~1.0.3/glob-to-regexp";
+import { globToRegExp } from "@std/path/glob-to-regexp";
 
 type Params = {
   globs: string[];
