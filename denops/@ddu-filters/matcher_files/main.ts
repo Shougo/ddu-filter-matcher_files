@@ -3,7 +3,7 @@ import { BaseFilter } from "@shougo/ddu-vim/filter";
 
 import type { ActionData } from "@shougo/ddu-kind-file";
 
-import type { Denops } from "jsr:@denops/std";
+import type { Denops } from "@denops/std";
 
 import { globToRegExp } from "@std/path/glob-to-regexp";
 
