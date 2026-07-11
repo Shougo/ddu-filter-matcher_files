@@ -3,7 +3,7 @@
 Author: Shougo <Shougo.Matsu at gmail.com>
 License: MIT license
 
-CONTENTS				*ddu-filter-matcher_files*
+CONTENTS                                            *ddu-filter-matcher_files*
 
 Introduction		|ddu-filter-matcher_files-introduction|
 Install			|ddu-filter-matcher_files-install|
@@ -12,13 +12,13 @@ Params			|ddu-filter-matcher_files-params|
 
 
 ==============================================================================
-INTRODUCTION			*ddu-filter-matcher_files-introduction*
+INTRODUCTION                           *ddu-filter-matcher_files-introduction*
 
 This matcher filters specified files items.
 
 
 ==============================================================================
-INSTALL				*ddu-filter-matcher_files-install*
+INSTALL                                     *ddu-filter-matcher_files-install*
 
 Please install both "ddu.vim" and "denops.vim".
 
@@ -27,8 +27,8 @@ https://github.com/vim-denops/denops.vim
 
 
 ==============================================================================
-EXAMPLES			*ddu-filter-matcher_files-examples*
->
+EXAMPLES                                   *ddu-filter-matcher_files-examples*
+>vim
 	call ddu#custom#patch_global(#{
 	    \   sourceOptions: #{
 	    \     _: #{
@@ -47,15 +47,15 @@ EXAMPLES			*ddu-filter-matcher_files-examples*
 <
 
 ==============================================================================
-PARAMS				*ddu-filter-matcher_files-params*
+PARAMS                                       *ddu-filter-matcher_files-params*
 
-				*ddu-filter-matcher_files-param-globs*
+                                        *ddu-filter-matcher_files-param-globs*
 globs (string[])
 		The files glob list.
 
 		Default: []
 
-				*ddu-filter-matcher_files-param-patterns*
+                                     *ddu-filter-matcher_files-param-patterns*
 patterns (string[])
 		The files pattern list.
 		Note: They must be TypeScript Regexp.
